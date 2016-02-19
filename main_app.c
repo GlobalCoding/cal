@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "cal.h"
 
+extern int run_tests();
 int main(int argc, char const *argv[])
 {
 	DATE currentDate;
@@ -12,6 +13,8 @@ int main(int argc, char const *argv[])
 	currentDate.dom = FRI;
 
 	print_date(currentDate);
+
+        run_tests();
 
 	return 0;
 }

@@ -25,7 +25,7 @@ void print_months()
 
 	for (i = JAN; i <= DEC; i++)
 	{
-		printf("%s ", month_names[i]);
+		printf("%s, ", month_names[i]);
 	}
 }
 
@@ -34,7 +34,7 @@ void print_weekdays()
 	int i=MON;
 
 	do{
-		printf("%s ", week_day[i]);
+		printf("%s, ", week_day[i]);
 		i++;
 	}while(i <= SUN);
 }
@@ -59,7 +59,7 @@ void print_date(DATE date)
 {
 	printf("The date is: \t");
 	printf("%s, ", get_day_name(calc_day_of_week(date)));
-        printf("%s ", get_month_name(date.month));
+        printf("%s %d, ", get_month_name(date.month), date.dom);
 	printf("%d\n", date.year);
 }
 
