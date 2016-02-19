@@ -34,5 +34,7 @@ typedef struct{
 } DATE;
 
 void what_is_the_month(DATE currentDate);
+void what_is_the_day(DATE currentDay);
+void tell_me_date(DATE date);
 
 #endif

@@ -1,49 +1,36 @@
 #include <stdio.h>
 #include "cal.h"
 
-void what_is_the_month(DATE currentDate){
-	
-//	printf("%s\n", "I won't tell you untill you give me a chocolate");
+void what_is_the_month(DATE currentDate)
+{
+	int i;
+	const char* month_names[] = {"", "January", "February", "March", 
+	"April", "May", "June", "July", "August",
+	"September", "October", "November", "December"};
 
-	/* Find the name of the month in string format and print it. */
-	switch(currentDate.month){
-		case JAN:
-			printf("%s\n", "January");
-		break;
-		case FEB:
-			printf("%s\n", "February");
-		break;
-		case MAR:
-			printf("%s\n", "March");
-		break;
-		case APR:
-			printf("%s\n", "April");
-		break;
-		case MAY:
-			printf("%s\n", "May");
-		break;
-		case JUN:
-			printf("%s\n", "June");
-		break;
-		case JUL:
-			printf("%s\n", "July");
-		break;
-		case AUG:
-			printf("%s\n", "August");
-		break;
-		case SEP:
-			printf("%s\n", "September");
-		break;
-		case OCT:
-			printf("%s\n", "October");
-		break;
-		case NOV:
-			printf("%s\n", "November");
-		break;
-		case DEC:
-			printf("%s\n", "December");
-		break;
-		default:
-			printf("%s\n", "Incorrect date. Month can't be greater than 12 or less than 1");
+	for (i = JAN; i <= DEC; i++)
+	{
+		printf("%s ", month_names[i]);
 	}
 }
+
+void what_is_the_day(DATE currentDay)
+{
+	const char* week_day[] = {"", "Monday", "Tuesday", "Wednesday", 
+	"Thursday", "Friday", "Saturday", "Sunday"};
+	int i=MON;
+
+	do{
+		printf("%s ", week_day[i]);
+		i++;
+	}while(i <= SUN);
+}
+
+void tell_me_date(DATE date)
+{
+	printf("The date is: \t");
+	what_is_the_day(date);
+	what_is_the_month(date);
+	printf("%d\n", date.year);
+}
+
