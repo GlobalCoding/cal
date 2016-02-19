@@ -1,18 +1,13 @@
 #include <stdio.h>
+#include <time.h>
 #include "cal.h"
 
 extern int run_tests();
 int main(int argc, char const *argv[])
 {
-	DATE currentDate;
-
-	printf("Starting calendar test\n");
-
-	currentDate.year = 2016;
-	currentDate.month = JAN;
-	currentDate.dom = FRI;
-
-	print_date(currentDate);
+	time_t time_of_test = time(NULL);
+        
+        printf("\nTime of the test:%s\n\n", ctime(&time_of_test));
 
         run_tests();
 
