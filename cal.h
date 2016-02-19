@@ -15,7 +15,7 @@ typedef enum{
 	NOV,
 	DEC
 	
-} MONTHS;
+} MONTH;
 
 typedef enum{
 	MON=1,
@@ -28,13 +28,18 @@ typedef enum{
 } WEEKDAY;
 
 typedef struct{
-	MONTHS month;
-	unsigned int day_of_month;
+	MONTH month;
+	unsigned int dom;   /* day of the month */
 	unsigned int year;	/* year must be in 4 digit format */
 } DATE;
 
-void what_is_the_month(DATE currentDate);
-void what_is_the_day(DATE currentDay);
-void tell_me_date(DATE date);
+char* get_month_name(MONTH month);
+char* get_day_name(WEEKDAY day);
+void print_months();
+void print_weekdays();
+void print_date(DATE date);
+WEEKDAY calc_day_of_week(DATE date);
 
+#define STARTING_DAY FRI
+#define WEEK_LENGTH (7) 
 #endif
